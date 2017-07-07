@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+  	   <!--<headd headname="嘻哈校园"></headd>-->
         <div class="top">
 		 	 <a href="###" class="fh"></a>
 		 	 <span class="sp1">列表</span>
@@ -44,6 +45,7 @@
 </template>
 
 <script>
+import headd from '@/components/headd'
 import  {jzxx} from '@/service/parttime'
 export default {
  	name: 'hello',
@@ -52,6 +54,9 @@ export default {
  	 	 		 a:true,
  	 	 		 jzxx:jzxx
  	 		}
+ 	 	},
+ 	 	components:{
+ 	 		  headd
  	 	}
 }
 </script>

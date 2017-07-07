@@ -5,6 +5,7 @@ import Router from 'vue-router'
 import Vuex from 'vuex'
 import Hello from '@/components/Hello'
 import demo1 from '@/components/demo1'
+
 Vue.use(Vuex)
 Vue.use(Router)
 
@@ -18,7 +19,7 @@ let router=new Router({
 	  mode:'history',
 	  routes: [
 	    {
-	      path: '/',
+	      path: '/hello',
 	      name: 'Hello',
 	      component: Hello
 	    },
