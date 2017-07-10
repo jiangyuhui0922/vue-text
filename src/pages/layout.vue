@@ -1,14 +1,6 @@
 <template>
-	 <div class="index">
-	 	  <headd headname="嘻哈校园"></headd>
-	 	  <div>
-	 	  	  <div class="index_banner">
-	 	  	     <img src="../images/index_banner_02.jpg" alt="" />
-	 	  	  </div>
-	 	  </div>
-	 	  <div class="container">
-	      <div class="fl">
-	 	  	<router-link :to="{path:'hello'}">
+	<div class="fl">
+	 	  	<router-link :to="{path:'hello'}" target="_blank">
 	 	  	  <div class="sch_new">校园新闻</div>
 	 	  	</router-link>
 	 	  	  <div class="jy">
@@ -18,32 +10,19 @@
 	 	  	  <div class="tz">跳蚤市场</div>
 	 	  	  <div class="part">兼职吧</div>
 	</div>
-	    </div>
-	 	  <div class="index_new">
-	 	  	  <p class="index_new_p">最新</p>
-	 	  	  <ul>
-	 	  	  	  <li></li>
-	 	  	  	  <li></li>
-	 	  	  </ul>
-	 	  </div>
-	 	   <!--<router-view></router-view>-->
-	 </div>
 </template>
 <script>
-	import  headd from '@/components/headd.vue'
     export default{
-    	 name:'index',
-    	 components:{
-    	 	 headd
-    	 }
+    	 name:'fl',
     }
 </script>
-<style>
+
+
+<style scope>
 	.index_banner{width: 6.4rem;height: 3.32rem;}
 	.index_banner img{width: 100%;height: 100%;}
 	.fl{padding: 0.13rem 0.13rem 0;width: 6.14rem;height: 3.4rem;color: #fff;font-size: 0.24rem;}
 	.fl div{overflow: hidden;}
-	.fl a{color: #fff;}
 	.sch_new{width: 3.03rem;height: 0.8rem;float:left;margin-right: 0.09rem;background: url(../images/bj1_05.png) center 0.54rem no-repeat #7dcc00;padding-top: 1.43rem;line-height: 1;text-align: center;background-size: 0.9rem 0.75rem;}	
 	.jy .px,.jy .qz,.part{padding-left: 1.27rem;width: 1.75rem;height: 1.09rem;line-height: 1.09rem;}
 	.jy{width: 3.02rem;height: 2.23rem;float:left;}

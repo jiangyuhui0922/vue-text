@@ -8,12 +8,11 @@
 		 </div>
 		 <div class="conter">
 		 	  <div class="ss">
-		 	  	 <input type="text"  placeholder="搜索你想要的"/>
+		 	  	 <input type="text"  placeholder="搜索你想要的" v-model="searchQuery"/>
 		 	   	 <button>搜索</button>
 			 </div>
 			  <ul class="list">
-			  	   <li v-for="item in jzxx">
-			  	   	 <!--<a  v-link:href="['xxx/detail/'+item.id]" class="list_a">-->
+			  	   <li v-for="item in filteredData">
 			  	   	 <router-link :to="{name: 'demo1', params: { item: item.id }}" class="list_a">
 			  	   	 	<img src="../images/sctp_12.jpg" alt=""  class="list_img"/>
 		                <div class="list_right">
@@ -35,10 +34,7 @@
 			  	   	 </router-link>
 			  	   </li>
 			  </ul>
-<!--			  
-			  <div>
-			  	  <button style="padding: 0.3rem;border: none;" v-on:click="aa" :class="{bgg:a}">按钮{{a}}</button>
-			  </div>-->
+
 		 </div>
 		 
   </div>
@@ -46,18 +42,36 @@
 
 <script>
 import headd from '@/components/headd'
-import  {jzxx} from '@/service/parttime'
+import  { jzxx } from '@/service/parttime'
+import Vue from 'vue'
+Vue.filter('filter1',function(value,myString){
+	 
+})
 export default {
  	name: 'hello',
  	 	data() {
  	 	 	return {
  	 	 		 a:true,
- 	 	 		 jzxx:jzxx
+ 	 	 		 jzxx:jzxx,
+ 	 	 		 searchQuery:''
  	 		}
  	 	},
  	 	components:{
  	 		  headd
- 	 	}
+ 	 	},
+ 	 	filters: {
+            capitalize: function (value) {
+                return value.charAt(0).toUpperCase() + value.slice(1);
+            }
+        },
+        computed: {
+            filteredData: function () {
+                var self = this;
+                return this.jzxx.filter(function (item) {
+                    return item.name.toLowerCase().indexOf(self.searchQuery.toLowerCase()) !== -1;
+                })
+            }
+        }
 }
 </script>
 
