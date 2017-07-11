@@ -63,15 +63,15 @@ export default {
             capitalize: function (value) {
                 return value.charAt(0).toUpperCase() + value.slice(1);
             }
-        },
-        computed: {
-            filteredData: function () {
-                var self = this;
-                return this.jzxx.filter(function (item) {
-                    return item.name.toLowerCase().indexOf(self.searchQuery.toLowerCase()) !== -1;
-                })
-            }
+    },
+    computed: {
+        filteredData: function () {
+            var self = this;
+            return this.jzxx.filter(function (item) {
+                return item.name.toLowerCase().indexOf(self.searchQuery.toLowerCase()) !== -1;
+            })
         }
+    }
 }
 </script>
 
@@ -81,7 +81,7 @@ export default {
 	 .top{width: 6.4rem;height: 1rem;background-color: lightskyblue;position: relative;}
 	 .top .fh{line-height: 1rem;color: #fff;width: 0.18rem;height: 0.31rem;background: url(../images/grzx_fh_03.png) 0 0 no-repeat;margin-left: 0.1rem;background-size: 100% 100%;margin-top: 0.3rem;position: absolute;z-index: 100;}
 	 .top .sp1{position: absolute;width: 100%;height: 100%;line-height: 1rem;z-index: 50;color: #fff;font-size: 0.34rem;text-align: center;}
-     .top .yh{
+    .top .yh{
       	   width: 0.34rem;height: 0.33rem;
       	   background: url(../images/yh.png) 0px 0px no-repeat;background-size: 100% 100%;
       	   position: absolute;right: 0.27rem;top: 0.3rem;
