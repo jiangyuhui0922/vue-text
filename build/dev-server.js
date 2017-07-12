@@ -69,6 +69,9 @@ var readyPromise = new Promise(resolve => {
   _resolve = resolve
 })
 
+
+
+
 console.log('> Starting dev server...')
 devMiddleware.waitUntilValid(() => {
   console.log('> Listening at ' + uri + '\n')
@@ -78,6 +81,19 @@ devMiddleware.waitUntilValid(() => {
   }
   _resolve()
 })
+
+
+const jsonServer = require('json-server')
+const apiserver = jsonServer.create()
+const apirouter = jsonServer.router('db.json')
+const middlewares = jsonServer.defaults()
+
+apiserver.use(middlewares)
+apiserver.use('/api',apirouter)
+apiserver.listen(port + 1, () => {
+  console.log('JSON Server is running')
+})
+
 
 var server = app.listen(port)
 

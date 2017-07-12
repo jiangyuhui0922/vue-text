@@ -21,20 +21,42 @@
 	    </div>
 	 	  <div class="index_new">
 	 	  	  <p class="index_new_p">最新</p>
-	 	  	  <ul>
-	 	  	  	  <li></li>
-	 	  	  	  <li></li>
+	 	  	  <ul class="index_new_ul">
+	 	  	  	  <li v-for="indexnewlist in newlist">
+	 	  	  	  	 <img src="../images/new1_22.jpg" alt="" class="index_new_img" />
+	 	  	  	  	 <div class="index_new_div">
+	 	  	  	  	 	 <p class="index_new_title">{{indexnewlist.title}}</p> 
+	 	  	  	  	 	 <p class="index_new_conter">{{indexnewlist.conter}}</p> 
+						 <p class="index_new_gn">
+						 	 
+						 	 <span class="index_new_pl" @click.once="add(indexnewlist.pl)">{{indexnewlist.pl}}</span>
+						 	 <span class="index_new_dz" @click.once="add(indexnewlist.dz)">{{indexnewlist.dz}}</span>
+						 </p>
+	 	  	  	  	 </div>
+	 	  	  	  </li>
 	 	  	  </ul>
+	 	  	  <p class="index_new_dd">内容到底了</p>
 	 	  </div>
-	 	   <!--<router-view></router-view>-->
 	 </div>
 </template>
 <script>
 	import  headd from '@/components/headd.vue'
+	import { newlist } from '@/service/newlist'
     export default{
     	 name:'index',
+    	 data(){
+    	 	 return{
+    	 	    newlist:newlist
+    	 	   
+    	 	 }
+    	 },
     	 components:{
     	 	 headd
+    	 },
+    	 methods:{
+    	 	 add(aa){
+    	 	          
+    	 	 }
     	 }
     }
 </script>
@@ -56,4 +78,15 @@
 	.index_new_p{font-size: 0.3rem;color: #9a9a9a;line-height: 1;height: 0.3rem;background: url(../images/lb_22.png) 0.12rem -0rem no-repeat;
 	            padding:0 0 0.12rem 0.53rem;background-size: 0.25rem 0.3rem;border-bottom: 1px solid #dedede;}	            
 	 .index_new ul li{padding: 0.2rem 0 0.13rem;}
+	 .index_new_ul li{overflow: hidden;border-bottom: 1px solid #9A9A9A;}
+	 .index_new_img{width: 1.7rem;height: 1.27rem;float: left;margin-right: 0.2rem;border: none;}
+	 .index_new_div{float: left;padding-top: 0.17rem;width: 4.24rem;}
+	 .index_new_title{line-height: 1;color: #333;font-size:0.24rem;margin-bottom: 0.09rem;}
+	 .index_new_conter{line-height:0.23rem;font-size: 0.16rem;color: #9a9a9a;margin-bottom: 0.16rem;height: 0.44rem;overflow: hidden;}
+	 .index_new_gn{overflow: hidden;}
+	 .index_new_gn span{float: right;padding-left: 0.24rem;height: 0.18rem;line-height: 0.18rem;color: #666;font-size: 0.14rem;background-size: 0.18rem 0.18rem;cursor: pointer;}
+	 .index_new_dz{background: url(../images/dz_25.png) left center no-repeat;margin-right: 0.33rem;}
+	 .index_new_pl{background: url(../images/pl_28.jpg) left center no-repeat;margin-right: 0.05rem;}
+	.index_new_ul li:last-child{border: none;}
+	.index_new_dd{text-align: center;margin-top: 0.1rem;color: #666;font-size: 0.3rem;}
 </style>
