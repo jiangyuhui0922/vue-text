@@ -36,3 +36,4 @@
 	            padding:0 0 0.12rem 0.53rem;background-size: 0.25rem 0.3rem;border-bottom: 1px solid #dedede;}	            
 	 .index_new ul li{padding: 0.2rem 0 0.13rem;}
 </style>
+

@@ -30,7 +30,6 @@
 		                		面试时间{{item.dd}}
 		                	</p>
 		                </div>
-			  	   	 <!--</a>-->
 			  	   	 </router-link>
 			  	   </li>
 			  </ul>
@@ -39,7 +38,6 @@
 		 
   </div>
 </template>
-
 <script>
 import headd from '@/components/headd'
 import  { jzxx } from '@/service/parttime'
@@ -47,8 +45,6 @@ import Vue from 'vue'
 Vue.filter('filter1',function(value,myString){
 	 
 })
-
-
 
 export default {
  	name: 'hello',
@@ -79,11 +75,11 @@ export default {
     },
     created:function () {
 	  this.$http.get('http://211.149.193.19:8080/api/customers').then(function(data){
-	  	 console.log(data.bodyText)
-	  	   console.log("bbb")
+	  	 // console.log(data.bodyText)
+	  	   // console.log("bbb")
 	  },function(err){
 	  	  console.log(err)
-	  	  console.log("aaa")
+	  	  // console.log("aaa")
 	  })
 }
 }

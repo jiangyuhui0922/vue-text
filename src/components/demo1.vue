@@ -6,8 +6,7 @@
 		  <p class="sp_dd">面试地点{{item.dd}}</p>
 		  
 	</div>
-	</div>
-	
+	</div>	
 </template>
 
 <script>

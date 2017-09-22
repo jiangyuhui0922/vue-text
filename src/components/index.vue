@@ -1,66 +1,90 @@
 <template>
-	 <div class="index">
-	 	  <headd headname="嘻哈校园"></headd>
-	 	  <div>
-	 	  	  <div class="index_banner">
-	 	  	     <img src="../images/index_banner_02.jpg" alt="" />
-	 	  	  </div>
-	 	  </div>
-	 	  <div class="container">
-	      <div class="fl">
-	 	  	<router-link :to="{path:'hello'}">
-	 	  	  <div class="sch_new">校园新闻</div>
-	 	  	</router-link>
-	 	  	  <div class="jy">
-	 	  	  	  <div class="px">教育培训</div>
-	 	  	  	  <div class="qz">微圈子</div>
-	 	  	  </div>
-	 	  	  <div class="tz">跳蚤市场</div>
-	 	  	  <div class="part">兼职吧</div>
-	</div>
-	    </div>
-	 	  <div class="index_new">
-	 	  	  <p class="index_new_p">最新</p>
-	 	  	  <ul class="index_new_ul">
-	 	  	  	  <li v-for="indexnewlist in newlist">
-	 	  	  	  	 <img src="../images/new1_22.jpg" alt="" class="index_new_img" />
-	 	  	  	  	 <div class="index_new_div">
-	 	  	  	  	 	 <p class="index_new_title">{{indexnewlist.title}}</p> 
-	 	  	  	  	 	 <p class="index_new_conter">{{indexnewlist.conter}}</p> 
-						 <p class="index_new_gn">
-						 	 
-						 	 <span class="index_new_pl" @click.once="add(indexnewlist.pl)">{{indexnewlist.pl}}</span>
-						 	 <span class="index_new_dz" @click.once="add(indexnewlist.dz)">{{indexnewlist.dz}}</span>
-						 </p>
-	 	  	  	  	 </div>
-	 	  	  	  </li>
-	 	  	  </ul>
-	 	  	  <p class="index_new_dd">内容到底了</p>
-	 	  </div>
+	 <div class="index" >
+	 	    <headd headname="嘻哈校园" v-on:sjj="bh"></headd>
+		 	<div :class="[ishd? ksclass:jsclass,zzclass]">
+				 	  <div>
+				 	  	  <div class="index_banner">
+				 	  	     <img src="../images/index_banner_02.jpg" alt="" />
+				 	  	  </div>
+				 	  </div>
+				 	  <div class="container">
+					      <div class="fl">
+					      	   <router-link :to="{path:'new'}">
+					 	  	      <div class="sch_new">校园新闻</div>	
+					 	  	  </router-link>	 	  	
+					 	  	  <div class="jy">
+					 	  	  	  <div class="px">教育培训</div>
+					 	  	  	  <div class="qz">微圈子</div>
+					 	  	  </div>
+					 	  	  <div class="tz">跳蚤市场</div>
+					 	  	  <router-link :to="{path:'hello'}">
+					 	  	  <div class="part">兼职吧</div>
+					 	  	  </router-link>
+					      </div>
+				      </div>
+
+				      
+				 	  <div class="index_new">
+				 	  	  <p class="index_new_p">最新</p>
+				 	  	  <ul class="index_new_ul">
+				 	  	  	  <li v-for="indexnewlist in newlist">
+				 	  	  	  	 <img src="../images/new1_22.jpg" alt="" class="index_new_img" />
+				 	  	  	  	 <div class="index_new_div">
+				 	  	  	  	 	 <p class="index_new_title">{{indexnewlist.title}}</p> 
+				 	  	  	  	 	 <p class="index_new_conter">{{indexnewlist.conter}}</p> 
+									 <p class="index_new_gn">		 	 
+									 	 <span class="index_new_pl" @click.once="add(indexnewlist.pl)">{{indexnewlist.pl}}</span>
+									 	 <span class="index_new_dz" @click.once="add(indexnewlist.dz)">{{indexnewlist.dz}}</span>
+									 </p>
+				 	  	  	  	 </div>
+				 	  	  	  </li>
+				 	  	  </ul>
+				 	  	  <p class="index_new_dd">内容到底了</p>
+				 	  </div>
+
+                      
+		 	  </div>
+
+		 	  <sideNav :class="[ishd? kksclass:ksclass,zzclass]"></sideNav>
 	 </div>
 </template>
 <script>
 	import  headd from '@/components/headd.vue'
+	import sideNav from '@/components/sideNav.vue'
 	import { newlist } from '@/service/newlist'
     export default{
     	 name:'index',
     	 data(){
     	 	 return{
-    	 	    newlist:newlist
+    	 	    newlist:newlist,
+                ishd:true,
+                ksclass:'ks',
+                kksclass:'kks',
+                jsclass:'js',
+                zzclass:'zz'
     	 	   
     	 	 }
     	 },
     	 components:{
-    	 	 headd
+    	 	 headd,
+    	 	 sideNav
     	 },
     	 methods:{
-    	 	 add(aa){
-    	 	          
+    	 	 bh:function (value) {
+    	 	     this.ishd=value
+
+    	 	     // console.log(value)
     	 	 }
+
     	 }
     }
 </script>
-<style>
+<style scoped>
+
+     
+
+
+    .index{padding-top: 0.8rem}
 	.index_banner{width: 6.4rem;height: 3.32rem;}
 	.index_banner img{width: 100%;height: 100%;}
 	.fl{padding: 0.13rem 0.13rem 0;width: 6.14rem;height: 3.4rem;color: #fff;font-size: 0.24rem;}
@@ -89,4 +113,6 @@
 	 .index_new_pl{background: url(../images/pl_28.jpg) left center no-repeat;margin-right: 0.05rem;}
 	.index_new_ul li:last-child{border: none;}
 	.index_new_dd{text-align: center;margin-top: 0.1rem;color: #666;font-size: 0.3rem;}
+
+
 </style>
