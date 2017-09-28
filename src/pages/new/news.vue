@@ -11,6 +11,8 @@
 		      	  </ul>
 	      	  </div>	      	 
 	      	  <sideNav :class="[ishd? kksclass:ksclass,zzclass]"></sideNav>
+
+	      	  
 	  </div> 
 </template>
 <script>    

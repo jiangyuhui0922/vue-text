@@ -9,7 +9,7 @@
 				 	  </div>
 				 	  <div class="container">
 					      <div class="fl">
-					      	   <router-link :to="{path:'new'}">
+					      	  <router-link :to="{path:'new'}">
 					 	  	      <div class="sch_new">校园新闻</div>	
 					 	  	  </router-link>	 	  	
 					 	  	  <div class="jy">
@@ -61,7 +61,7 @@
                 ksclass:'ks',
                 kksclass:'kks',
                 jsclass:'js',
-                zzclass:'zz'
+                zzclass:'zz',
     	 	   
     	 	 }
     	 },
@@ -72,8 +72,9 @@
     	 methods:{
     	 	 bh:function (value) {
     	 	     this.ishd=value
-
-    	 	     // console.log(value)
+    	 	 },
+    	 	 add:function (value) {
+                       
     	 	 }
 
     	 }
@@ -103,10 +104,14 @@
 	            padding:0 0 0.12rem 0.53rem;background-size: 0.25rem 0.3rem;border-bottom: 1px solid #dedede;}	            
 	 .index_new ul li{padding: 0.2rem 0 0.13rem;}
 	 .index_new_ul li{overflow: hidden;border-bottom: 1px solid #9A9A9A;}
-	 .index_new_img{width: 1.7rem;height: 1.27rem;float: left;margin-right: 0.2rem;border: none;}
+	 .index_new_img{width: 1.7rem;height: 1.45rem;float: left;margin-right: 0.2rem;border: none;}
 	 .index_new_div{float: left;padding-top: 0.17rem;width: 4.24rem;}
 	 .index_new_title{line-height: 1;color: #333;font-size:0.24rem;margin-bottom: 0.09rem;}
-	 .index_new_conter{line-height:0.23rem;font-size: 0.16rem;color: #9a9a9a;margin-bottom: 0.16rem;height: 0.44rem;overflow: hidden;}
+	 .index_new_conter{line-height:0.32rem;font-size: 0.16rem;color: #9a9a9a;margin-bottom: 0.16rem;height: 0.64rem;overflow: hidden;overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;}
 	 .index_new_gn{overflow: hidden;}
 	 .index_new_gn span{float: right;padding-left: 0.24rem;height: 0.18rem;line-height: 0.18rem;color: #666;font-size: 0.14rem;background-size: 0.18rem 0.18rem;cursor: pointer;}
 	 .index_new_dz{background: url(../images/dz_25.png) left center no-repeat;margin-right: 0.33rem;}

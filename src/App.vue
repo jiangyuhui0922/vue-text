@@ -27,7 +27,7 @@ export default {
         /*#app{padding-top: 0.8rem}*/
 
 
-          .zz {transition: all 0.5s ease-in-out;margin-top: 0.8rem}
+          .zz {transition: all 0.5s ease-in-out;}
 
 
       .js{transform: translate3d(5.8rem, 0px, 0);}

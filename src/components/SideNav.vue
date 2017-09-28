@@ -6,9 +6,9 @@
 	 	     </div>
              <ul class="side-ul">
              	 <li>
-             	 	 
+             	 	  <router-link :to="{path:'new'}">
              	 	 	  校园新闻
-             	 	   
+             	 	 </router-link>   
              	 </li>
              	  <li>
              	 	 
@@ -55,9 +55,9 @@
      .sideNav-top {width: 5.56rem;height: 1.99rem;background: url(../images/side-bg_02.jpg) 0 0 no-repeat;overflow: hidden;padding-left: 0.24rem}
      .sideNav-top img{float: left;width: 1.1rem;height: 1.1rem;margin: 0.45rem  0.3rem  0 0}
      .sideNav-top p{font-size: 0.3rem;color: #fff;line-height: 1.99rem;width: 3rem}
-	   .sideNav{width: 5.8rem;position: absolute;top: 0.8rem;left: 0rem;}
+	   .sideNav{width: 5.8rem;position: fixed;top: 0.8rem;left: 0rem;}
 	   .side-ul li{height: 1.05rem;line-height: 1.05rem;padding-left: 0.7rem;width: 3.9rem;position: relative;border-bottom :1px solid #ccc;margin-left: 0.6rem;font-size: 0.3rem;color: #333}
-     .side-ul li a{font-size: 0.3rem;color: #333}
+       .side-ul li a{font-size: 0.3rem;color: #333;display: block;width: 100%;}
        .side-ul li:after{
        	        content: '';
                 width:0.60rem;height: 0.6rem;position: absolute;left: -0.2rem;top: 0.3rem;
