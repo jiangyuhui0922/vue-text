@@ -5,32 +5,32 @@
 	 	     	  <p>请登录</p>
 	 	     </div>
              <ul class="side-ul">
-             	 <li>
+             	  <li>
              	 	  <router-link :to="{path:'new'}">
              	 	 	  校园新闻
              	 	 </router-link>   
-             	 </li>
+             	  </li>
              	  <li>
              	 	 
              	 	 	  教育培训
              	 	   
-             	 </li>
+             	  </li>
              	  <li>
              	 	 
              	 	 	  微圈子
              	 	   
-             	 </li>
+             	  </li>
              	  <li>
              	 	 
              	 	 	  跳蚤市场
              	 	   
-             	 </li>
+             	  </li>
              	  <li>
              	 	 
              	 	 	  兼职吧
              	 	   
              	 </li>
-                  <li>
+               <li>
              	 	 
              	 	 	  个人中心
              	 	   
