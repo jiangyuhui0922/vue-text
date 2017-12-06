@@ -59,29 +59,30 @@ export default {
  	 	components:{
  	 		  headd
  	 	},
- 	 	filters: {
-            capitalize: function (value) {
-                return value.charAt(0).toUpperCase() + value.slice(1);
-            }
-    },
+ 	 	// filters: {
+    //         capitalize: function (value) {
+    //             return value.charAt(0).toUpperCase() + value.slice(1);
+    //         }
+    // },
     computed: {
         filteredData: function () {
             var self = this;
-            return this.jzxx.filter(function (item) {
-//              return item.name.toLowerCase().indexOf(self.searchQuery.toLowerCase()) !== -1;
+            return  this.jzxx.filter(function (item) {
+            	//self 在函数内部表示外部的this；  转换this指向
                 return item.dd.indexOf(self.searchQuery) !== -1 || item.time.toLowerCase().indexOf(self.searchQuery.toLowerCase()) !== -1;
             })
+            //  array.filter()   对数组中的每一项运行给定函数，返回该函数会返回true的项  组成数组  
         }
     },
-    created:function () {
-	  this.$http.get('http://211.149.193.19:8080/api/customers').then(function(data){
-	  	 // console.log(data.bodyText)
-	  	   // console.log("bbb")
-	  },function(err){
-	  	  console.log(err)
-	  	  // console.log("aaa")
-	  })
-}
+   //  created:function () {
+	  // this.$http.get('http://211.149.193.19:8080/api/customers').then(function(data){
+	  // 	 // console.log(data.bodyText)
+	  // 	   // console.log("bbb")
+	  // },function(err){
+	  // 	  console.log(err)
+	  // 	  // console.log("aaa")
+	  // })
+//}
 }
 </script>
 
@@ -113,4 +114,5 @@ export default {
       .list_p2{background: url(../../images/jz_dd_03.png) 0.04rem center no-repeat;padding-left: 0.27rem;background-size: 0.18rem 0.18rem;font-size: 0.16rem;color: #9a9a9a;}
       .list_a{display: block;overflow: hidden;}
       .bgg{background-color: aqua;}
+      .sp2_dw{color: #000}
 </style>

@@ -1,40 +1,40 @@
 <template>
 	 <div class="sideNav">
 	 	     <div class="sideNav-top">
-	 	     	  <img src="../images/use-tx_03.png" height="115" width="115" alt="">
+	 	     	  <!-- <img src="../images/use-tx_03.png" height="115" width="115" alt=""> -->
 	 	     	  <p>请登录</p>
 	 	     </div>
              <ul class="side-ul">
              	  <li>
              	 	  <router-link :to="{path:'new'}">
              	 	 	  校园新闻
-             	 	 </router-link>   
+             	 	  </router-link>   
              	  </li>
              	  <li>
-             	 	 
-             	 	 	  教育培训
-             	 	   
-             	  </li>
+                   <router-link :to="{path:'train'}">
+                    教育培训
+                  </router-link>   
+                </li>
              	  <li>
-             	 	 
-             	 	 	  微圈子
-             	 	   
-             	  </li>
+                   <router-link :to="{path:'friend'}">
+                    微圈子
+                  </router-link>   
+                </li>
              	  <li>
-             	 	 
-             	 	 	  跳蚤市场
-             	 	   
-             	  </li>
+                   <router-link :to="{path:'market'}">
+                    跳蚤市场
+                  </router-link>   
+                </li>
              	  <li>
-             	 	 
-             	 	 	  兼职吧
-             	 	   
-             	 </li>
-               <li>
-             	 	 
-             	 	 	  个人中心
-             	 	   
-             	 </li>
+                    <router-link :to="{path:'partlist'}">
+                    兼职吧
+                  </router-link>   
+                </li>
+                <li>
+                    <router-link :to="{path:'personal'}">
+                    个人中心
+                  </router-link>   
+                </li>
              </ul> 
 	 </div>
 </template>
@@ -42,7 +42,6 @@
 <script>
 	
 	export default{
-         name:'sideNav',
          data(){
                     return{
 

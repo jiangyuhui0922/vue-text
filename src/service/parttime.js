@@ -3,6 +3,7 @@ export const jzxx = [{
 		money: 200,
 		time: '10月8日10:00-16:00',
 		dd: '中国山东0',
+		ms:'',
 		id: 0
 	},
 	{

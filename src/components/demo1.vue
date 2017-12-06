@@ -1,5 +1,7 @@
 <template>
 	<div class="demo1">
+
+    
 	<div v-for="item in jzxx" v-if="item.id==demo">
 		  <p class="sp1">{{item.name}}</p>
 		  <p class="sp_time">面试时间{{item.time}}</p>

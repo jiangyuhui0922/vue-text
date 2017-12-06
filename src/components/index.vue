@@ -1,7 +1,7 @@
 <template>
 	 <div class="index" >
 	 	    <headd headname="嘻哈校园" v-on:sjj="bh"></headd>
-		 	<div :class="[ishd? ksclass:jsclass,zzclass]">
+		 	<div :class="[ishd? 'ks':'js','zz']">
 				 	  <div>
 				 	  	  <div class="index_banner">
 				 	  	     <img src="../images/index_banner_02.jpg" alt="" />
@@ -17,7 +17,7 @@
 					 	  	  	  <div class="qz">微圈子</div>
 					 	  	  </div>
 					 	  	  <div class="tz">跳蚤市场</div>
-					 	  	  <router-link :to="{path:'hello'}">
+					 	  	  <router-link :to="{path:'partlist'}">
 					 	  	  <div class="part">兼职吧</div>
 					 	  	  </router-link>
 					      </div>
@@ -45,7 +45,7 @@
                       
 		 	  </div>
 
-		 	  <sideNav :class="[ishd? kksclass:ksclass,zzclass]"></sideNav>
+		 	  <sideNav :class="[ishd? 'kks':'ks','zz']"></sideNav>
 	 </div>
 </template>
 <script>
@@ -57,11 +57,7 @@
     	 data(){
     	 	 return{
     	 	    newlist:newlist,
-                ishd:true,
-                ksclass:'ks',
-                kksclass:'kks',
-                jsclass:'js',
-                zzclass:'zz',
+                ishd:true
     	 	   
     	 	 }
     	 },
